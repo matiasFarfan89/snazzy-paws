@@ -1,108 +1,168 @@
 <!-- BIT607 Web Development Assessment 2
-Student: Matias Farfan 
+Student: Matias Farfan
 ID number: 5114580 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snazzy Paws Grooming - Professional Dog Grooming</title>
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snazzy Paws Grooming - Professional Dog Grooming</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy':  '#1A2A4F',
+            'brand-dark':  '#2a3a5f',
+            'brand-pink':  '#F7A5A5',
+            'brand-peach': '#FFDBB6',
+            'brand-cream': '#FFF2EF',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
-    <!-- HEADER -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
-  <nav>
-    <a href="index.html" class="logo">🐾 Snazzy Paws Grooming</a>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="booking.html">Booking</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="booking.html" class="header-book-btn">Book Now</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-[1000] text-white"
+          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 py-4 relative">
+      <a href="index.html" class="text-2xl font-bold text-white no-underline hover:opacity-90 transition-opacity duration-300">
+        🐾 Snazzy Paws Grooming
+      </a>
+      <button class="hamburger hidden flex-col cursor-pointer gap-[5px] bg-transparent border-0 p-1"
+              aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
+      </button>
+      <ul class="nav-links flex list-none gap-10" id="navLinks">
+        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Services</a></li>
+        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Gallery</a></li>
+        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Booking</a></li>
+        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Contact</a></li>
+      </ul>
+      <a href="booking.html" class="header-book-btn inline-block bg-brand-pink text-brand-navy px-6 py-3 rounded-full font-bold text-base no-underline whitespace-nowrap border-2 border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:border-brand-pink"
+         style="box-shadow: 0 3px 10px rgba(247,165,165,0.4);">
+        Book Now
+      </a>
+    </nav>
+  </header>
 
-<script>
-function toggleMenu() {
-  var navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
-}
-</script>
+  <main id="main-content" class="page-content">
 
+    <!-- HERO -->
+    <section class="hero text-white text-center relative overflow-hidden
+                    py-32 px-4 sm:py-40 lg:py-[14rem]"
+             style="background-image: linear-gradient(180deg, rgba(63,63,63,0), rgba(0,0,0,0.35)), url('./assets/images/hero2.jpg');
+                    background-size: cover; background-position: center 20%; background-repeat: no-repeat;">
+      <div class="absolute inset-0 opacity-30 pointer-events-none"
+           style="background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 30px 30px;"></div>
+      <h1 class="relative z-10 font-bold text-white mb-6 text-[2rem] sm:text-[2.5rem] lg:text-[3.5rem]"
+          style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">
+        Welcome to Snazzy Paws Grooming
+      </h1>
+      <p class="relative z-10 text-white mb-10 text-base sm:text-[1.2rem] lg:text-[1.4rem]"
+         style="text-shadow: 1px 1px 6px rgba(0,0,0,0.6);">
+        Professional Dog Grooming Services in Hamilton
+      </p>
+      <a href="booking.html"
+         class="relative z-10 inline-block bg-brand-pink text-brand-navy font-bold no-underline rounded-full border-2 border-transparent
+                px-8 py-4 sm:px-12 text-[1rem] sm:text-[1.1rem]
+                transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white hover:border-brand-pink"
+         style="box-shadow: 0 6px 20px rgba(247,165,165,0.4);">
+        Book Appointment
+      </a>
+    </section>
 
-    <!-- HOME PAGE -->
+    <!-- CONTENT -->
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 py-12 sm:py-16">
 
-    <div id="home" class="page-content active">
-        <section class="hero">
-            <h1>Welcome to Snazzy Paws Grooming</h1>
-            <p>Professional Dog Grooming Services in Hamilton</p>
-            <a href="booking.html" class="cta-button">Book Appointment</a>
-        </section>
+      <!-- About Us -->
+      <section class="mb-16 scroll-animate">
+        <h2 class="text-center font-semibold mb-12 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 justify-items-center">
 
-        <div class="container">
-            <section>
-                <h2>About Us</h2>
-                <div class="features">
-                    <div class="feature-card">
-                        <div class="feature-icon">🐾</div>
-                        <h3>Our Story</h3>
-                        <p>Founded in 2015, Snazzy Paws began with a simple mission: to provide exceptional grooming in a loving environment where every pet feels at home.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">👥</div>
-                        <h3>Our Team</h3>
-                        <p>Our certified groomers are passionate pet lovers with specialized training in various breeds and temperaments, ensuring personalized care for each furry friend.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💫</div>
-                        <h3>Our Values</h3>
-                        <p>We believe in compassionate care, transparent practices, and building lasting relationships with both pets and their families in our community.</p>
-                    </div>
-                </div>
-            </section>
+          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+                          scroll-animate scroll-animate-delay-1"
+                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <span class="text-[3.5rem] mb-6 block" role="img" aria-label="Paw print">🐾</span>
+            <h3 class="text-[1.5rem] font-semibold mb-4">Our Story</h3>
+            <p class="text-[1rem] leading-[1.7]">Founded in 2015, Snazzy Paws began with a simple mission: to provide exceptional grooming in a loving environment where every pet feels at home.</p>
+          </article>
 
-            <section>
-                <h2>Customer Testimonials</h2>
-                <div class="testimonial">
-                    <p>"Absolutely wonderful service! My Golden Retriever, Buddy, always comes home looking fantastic. The staff are so caring and professional."</p>
-                    <p class="author">- Margaret Thompson</p>
-                </div>
-                <div class="testimonial">
-                    <p>"Best grooming salon in Hamilton! They did an amazing job with my show dogs. Highly recommend for breed-specific cuts."</p>
-                    <p class="author">- James Chen</p>
-                </div>
-                <div class="testimonial">
-                    <p>"I always recommend Snazzy Paws to my customers. They provide excellent service and really understand senior dog care."</p>
-                    <p class="author">- Sarah Williams, Hamilton Pet Supplies</p>
-                </div>
-            </section>
+          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+                          scroll-animate scroll-animate-delay-2"
+                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <span class="text-[3.5rem] mb-6 block" role="img" aria-label="People">👥</span>
+            <h3 class="text-[1.5rem] font-semibold mb-4">Our Team</h3>
+            <p class="text-[1rem] leading-[1.7]">Our certified groomers are passionate pet lovers with specialized training in various breeds and temperaments, ensuring personalized care for each furry friend.</p>
+          </article>
+
+          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+                          scroll-animate scroll-animate-delay-3"
+                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <span class="text-[3.5rem] mb-6 block" role="img" aria-label="Sparkles">💫</span>
+            <h3 class="text-[1.5rem] font-semibold mb-4">Our Values</h3>
+            <p class="text-[1rem] leading-[1.7]">We believe in compassionate care, transparent practices, and building lasting relationships with both pets and their families in our community.</p>
+          </article>
+
         </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="mb-16 scroll-animate">
+        <h2 class="text-center font-semibold mb-12 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Customer Testimonials</h2>
+
+        <blockquote class="bg-brand-cream p-8 rounded-xl my-6 border-l-[5px] border-l-brand-peach
+                           transition-transform duration-300 hover:translate-x-[5px] scroll-animate scroll-animate-delay-1"
+                    style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <p class="italic leading-[1.8]">"Absolutely wonderful service! My Golden Retriever, Buddy, always comes home looking fantastic. The staff are so caring and professional."</p>
+          <footer class="font-semibold text-right not-italic text-base">— Margaret Thompson</footer>
+        </blockquote>
+
+        <blockquote class="bg-brand-cream p-8 rounded-xl my-6 border-l-[5px] border-l-brand-peach
+                           transition-transform duration-300 hover:translate-x-[5px] scroll-animate scroll-animate-delay-2"
+                    style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <p class="italic leading-[1.8]">"Best grooming salon in Hamilton! They did an amazing job with my show dogs. Highly recommend for breed-specific cuts."</p>
+          <footer class="font-semibold text-right not-italic text-base">— James Chen</footer>
+        </blockquote>
+
+        <blockquote class="bg-brand-cream p-8 rounded-xl my-6 border-l-[5px] border-l-brand-peach
+                           transition-transform duration-300 hover:translate-x-[5px] scroll-animate scroll-animate-delay-3"
+                    style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <p class="italic leading-[1.8]">"I always recommend Snazzy Paws to my customers. They provide excellent service and really understand senior dog care."</p>
+          <footer class="font-semibold text-right not-italic text-base">— Sarah Williams, Hamilton Pet Supplies</footer>
+        </blockquote>
+
+      </section>
     </div>
+  </main>
 
-    <!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="text-white text-center px-8 py-12 mt-20"
+          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 -4px 12px rgba(0,0,0,0.15);">
+    <nav class="footer-links flex justify-center gap-8 sm:gap-10 mb-6 flex-wrap" aria-label="Footer navigation">
+      <a href="./index.html"    class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Home</a>
+      <a href="./services.html" class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Services</a>
+      <a href="./gallery.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Gallery</a>
+      <a href="./booking.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Booking</a>
+      <a href="./contact.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Contact</a>
+    </nav>
+    <p class="opacity-90 text-[0.95rem] my-2">&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
+    <p class="opacity-90 text-[0.95rem] my-2">Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
+    <p class="opacity-90 text-[0.95rem] my-2">Opening Hours: Monday – Saturday 9:00 AM – 5:00 PM | Sunday: Closed</p>
+  </footer>
 
-    <footer>
-        <div class="footer-links">
-            <a href="./index.html" onclick="showPage('home')">Home</a>
-            <a href="./services.html" onclick="showPage('services')">Services</a>
-            <a href="./gallery.html" onclick="showPage('gallery')">Gallery</a>
-            <a href="./booking.html" onclick="showPage('booking')">Booking</a>
-            <a href="./contact.html" onclick="showPage('contact')">Contact</a>
-        </div>
-        <p>&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
-        <p>Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
-        <p>Opening Hours: Monday - Saturday 9:00 AM - 5:00 PM | Sunday: Closed</p>
-    </footer>
-
+  <script src="./script.js"></script>
 </body>
 </html>

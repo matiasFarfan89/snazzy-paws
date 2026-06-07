@@ -1,155 +1,193 @@
 <!-- BIT607 Web Development Assessment 2
-Student: Matias Farfan 
+Student: Matias Farfan
 ID number: 5114580 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snazzy Paws Grooming - Services</title>
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snazzy Paws Grooming - Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy':  '#1A2A4F',
+            'brand-dark':  '#2a3a5f',
+            'brand-pink':  '#F7A5A5',
+            'brand-peach': '#FFDBB6',
+            'brand-cream': '#FFF2EF',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
-    <!-- HEADER -->
 
-    <header>
-  <nav>
-    <a href="index.html" class="logo">🐾 Snazzy Paws Grooming</a>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="booking.html">Booking</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="booking.html" class="header-book-btn">Book Now</a>
-  </nav>
-</header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- SERVICES PAGE -->
+  <!-- HEADER -->
+  <header class="sticky top-0 z-[1000] text-white"
+          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 py-4 relative">
+      <a href="index.html" class="text-2xl font-bold text-white no-underline hover:opacity-90 transition-opacity duration-300">
+        🐾 Snazzy Paws Grooming
+      </a>
+      <button class="hamburger hidden flex-col cursor-pointer gap-[5px] bg-transparent border-0 p-1"
+              aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
+      </button>
+      <ul class="nav-links flex list-none gap-10" id="navLinks">
+        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Services</a></li>
+        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Gallery</a></li>
+        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Booking</a></li>
+        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Contact</a></li>
+      </ul>
+      <a href="booking.html" class="header-book-btn inline-block bg-brand-pink text-brand-navy px-6 py-3 rounded-full font-bold text-base no-underline whitespace-nowrap border-2 border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:border-brand-pink"
+         style="box-shadow: 0 3px 10px rgba(247,165,165,0.4);">
+        Book Now
+      </a>
+    </nav>
+  </header>
 
-    <div id="services" class="page-content active">
-        <div class="container">
-            <section>
-                <h2>Our Grooming Services</h2>
-                <p>We offer a comprehensive range of professional grooming services tailored to your dog's needs.</p>
+  <main id="main-content" class="page-content">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-8 py-12 sm:py-16">
 
-                <table class="services-table">
-                    <thead>
-                        <tr>
-                            <th>Service</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Bath and Brush</strong></td>
-                            <td>Shampoo, blow-dry, brush-out and nail trim</td>
-                            <td class="price">$25 - $50</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Haircut</strong></td>
-                            <td>Bath, blow-dry, haircut (breed standard or owner's preference) and nail trim</td>
-                            <td class="price">$45 - $85</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Full Grooming Package</strong></td>
-                            <td>Comprehensive service including bath, haircut, teeth brushing, nail trim and ear cleaning</td>
-                            <td class="price">$60 - $120</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Spa Package</strong></td>
-                            <td>Bath, haircut, teeth brushing, nail trim and special scents or conditioners</td>
-                            <td class="price">$75 - $150</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Senior Dog Package</strong></td>
-                            <td>Grooming services tailored for older dogs with special handling and care</td>
-                            <td class="price">$40 - $80</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Puppy Package</strong></td>
-                            <td>Introductory grooming services tailored for puppies</td>
-                            <td class="price">$30 - $60</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Nail Trim</strong></td>
-                            <td>Trim nails and filing</td>
-                            <td class="price">$10 - $20</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ear Cleaning</strong></td>
-                            <td>Gentle cleaning of ears to remove wax and debris</td>
-                            <td class="price">$10 - $15</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Teeth Brushing</strong></td>
-                            <td>Brushing with pet-safe toothpaste</td>
-                            <td class="price">$10 - $15</td>
-                        </tr>
-                        <tr>
-                            <td><strong>De-shedding Treatment</strong></td>
-                            <td>Special shampoo and undercoat removal (in addition to bath or haircut)</td>
-                            <td class="price">+$20 - $40</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Medicated Bath</strong></td>
-                            <td>For pets with skin conditions requiring special shampoo (additional charge)</td>
-                            <td class="price">+$20 - $40</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Flea and Tick Treatment</strong></td>
-                            <td>Shampoo and preventative treatment</td>
-                            <td class="price">$15 - $30</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+      <!-- Services Table -->
+      <section class="mb-16 scroll-animate">
+        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Our Grooming Services</h2>
+        <p class="text-center mb-8">We offer a comprehensive range of professional grooming services tailored to your dog's needs.</p>
 
-            <section>
-                <h2>Our Expert Team</h2>
-                <div class="features">
-                    <div class="feature-card">
-                        <h3>Certified Groomers</h3>
-                        <p>Our team consists of professionally trained and certified dog groomers with extensive experience in all breeds.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Specialized Training</h3>
-                        <p>Staff trained in senior dog care, medical grooming requirements, and breed-specific styling techniques.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Passionate Care</h3>
-                        <p>We're dog lovers first, ensuring every pet receives gentle, patient, and loving treatment.</p>
-                    </div>
-                </div>
-            </section>
+        <div class="overflow-x-auto rounded-xl scroll-animate" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <table class="w-full border-collapse" style="border-radius: 10px; overflow: hidden;">
+            <thead>
+              <tr style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%);">
+                <th class="text-left px-5 py-5 text-white font-semibold text-[1.05rem]">Service</th>
+                <th class="text-left px-5 py-5 text-white font-semibold text-[1.05rem]">Description</th>
+                <th class="text-left px-5 py-5 text-white font-semibold text-[1.05rem] whitespace-nowrap">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Bath and Brush</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Shampoo, blow-dry, brush-out and nail trim</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$25 – $50</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Haircut</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Bath, blow-dry, haircut (breed standard or owner's preference) and nail trim</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$45 – $85</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Full Grooming Package</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Comprehensive service including bath, haircut, teeth brushing, nail trim and ear cleaning</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$60 – $120</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Spa Package</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Bath, haircut, teeth brushing, nail trim and special scents or conditioners</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$75 – $150</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Senior Dog Package</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Grooming services tailored for older dogs with special handling and care</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$40 – $80</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Puppy Package</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Introductory grooming services tailored for puppies</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$30 – $60</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Nail Trim</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Trim nails and filing</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$10 – $20</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Ear Cleaning</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Gentle cleaning of ears to remove wax and debris</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$10 – $15</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Teeth Brushing</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Brushing with pet-safe toothpaste</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$10 – $15</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>De-shedding Treatment</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Special shampoo and undercoat removal (in addition to bath or haircut)</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">+$20 – $40</td>
+              </tr>
+              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Medicated Bath</strong></td>
+                <td class="px-5 py-5 text-brand-navy">For pets with skin conditions requiring special shampoo (additional charge)</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">+$20 – $40</td>
+              </tr>
+              <tr class="bg-white hover:bg-brand-cream transition-colors duration-200">
+                <td class="px-5 py-5 text-brand-navy"><strong>Flea and Tick Treatment</strong></td>
+                <td class="px-5 py-5 text-brand-navy">Shampoo and preventative treatment</td>
+                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$15 – $30</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </div>
+      </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="./index.html" onclick="showPage('home')">Home</a>
-            <a href="./services.html" onclick="showPage('services')">Services</a>
-            <a href="./gallery.html" onclick="showPage('gallery')">Gallery</a>
-            <a href="./booking.html" onclick="showPage('booking')">Booking</a>
-            <a href="./contact.html" onclick="showPage('contact')">Contact</a>
+      <!-- Expert Team -->
+      <section class="mb-16 scroll-animate">
+        <h2 class="text-center font-semibold mb-12 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Our Expert Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 justify-items-center">
+
+          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+                          scroll-animate scroll-animate-delay-1"
+                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <h3 class="text-[1.5rem] font-semibold mb-4">Certified Groomers</h3>
+            <p class="text-[1rem] leading-[1.7]">Our team consists of professionally trained and certified dog groomers with extensive experience in all breeds.</p>
+          </article>
+
+          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+                          scroll-animate scroll-animate-delay-2"
+                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <h3 class="text-[1.5rem] font-semibold mb-4">Specialized Training</h3>
+            <p class="text-[1rem] leading-[1.7]">Staff trained in senior dog care, medical grooming requirements, and breed-specific styling techniques.</p>
+          </article>
+
+          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+                          scroll-animate scroll-animate-delay-3"
+                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <h3 class="text-[1.5rem] font-semibold mb-4">Passionate Care</h3>
+            <p class="text-[1rem] leading-[1.7]">We're dog lovers first, ensuring every pet receives gentle, patient, and loving treatment.</p>
+          </article>
+
         </div>
-        <p>&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
-        <p>Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
-        <p>Opening Hours: Monday - Saturday 9:00 AM - 5:00 PM | Sunday: Closed</p>
-    </footer>
-    <script>
-function toggleMenu() {
-  var navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
-}
-</script>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-white text-center px-8 py-12 mt-20"
+          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 -4px 12px rgba(0,0,0,0.15);">
+    <nav class="footer-links flex justify-center gap-8 sm:gap-10 mb-6 flex-wrap" aria-label="Footer navigation">
+      <a href="./index.html"    class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Home</a>
+      <a href="./services.html" class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Services</a>
+      <a href="./gallery.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Gallery</a>
+      <a href="./booking.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Booking</a>
+      <a href="./contact.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Contact</a>
+    </nav>
+    <p class="opacity-90 text-[0.95rem] my-2">&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
+    <p class="opacity-90 text-[0.95rem] my-2">Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
+    <p class="opacity-90 text-[0.95rem] my-2">Opening Hours: Monday – Saturday 9:00 AM – 5:00 PM | Sunday: Closed</p>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
