@@ -159,8 +159,7 @@ section h2::after {
 }
 
 /* ── Hero ────────────────────────────────────────── */
-.hero { background-attachment: fixed; }
-@media (max-width: 768px) { .hero { background-attachment: scroll; } }
+.hero { background-attachment: scroll; }
 
 @keyframes heroFadeUp {
   from { opacity: 0; transform: translateY(24px); }
