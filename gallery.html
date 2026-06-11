@@ -13,16 +13,28 @@ ID number: 5114580 -->
       theme: {
         extend: {
           colors: {
-            'brand-navy':  '#1A2A4F',
-            'brand-dark':  '#2a3a5f',
-            'brand-pink':  '#F7A5A5',
-            'brand-peach': '#FFDBB6',
-            'brand-cream': '#FFF2EF',
+            'brand-navy':     '#0F1B2E',
+            'brand-dark':     '#2D3E5F',
+            'brand-pink':     '#E89B9B',
+            'brand-rose':     '#D4878F',
+            'brand-peach':    '#F4D5C4',
+            'brand-cream':    '#FAF6F3',
+            'brand-gold':     '#C9A876',
+            'brand-sage':     '#A8B8A8',
+            'brand-charcoal': '#2C2C2C',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+            accent:  ['Lora', 'serif'],
           }
         }
       }
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -30,10 +42,9 @@ ID number: 5114580 -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-[1000] text-white"
-          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <header class="site-header sticky top-0 z-[1000] text-white">
     <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 py-4 relative">
-      <a href="index.html" class="text-2xl font-bold text-white no-underline hover:opacity-90 transition-opacity duration-300">
+      <a href="index.html" class="logo-link text-[1.6rem] font-bold text-white no-underline">
         🐾 Snazzy Paws Grooming
       </a>
       <button class="hamburger hidden flex-col cursor-pointer gap-[5px] bg-transparent border-0 p-1"
@@ -43,14 +54,13 @@ ID number: 5114580 -->
         <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
       </button>
       <ul class="nav-links flex list-none gap-10" id="navLinks">
-        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Services</a></li>
-        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Gallery</a></li>
-        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Booking</a></li>
-        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Contact</a></li>
+        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] py-2">Services</a></li>
+        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Gallery</a></li>
+        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Booking</a></li>
+        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Contact</a></li>
       </ul>
-      <a href="booking.html" class="header-book-btn inline-block bg-brand-pink text-brand-navy px-6 py-3 rounded-full font-bold text-base no-underline whitespace-nowrap border-2 border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:border-brand-pink"
-         style="box-shadow: 0 3px 10px rgba(247,165,165,0.4);">
-        Book Now
+      <a href="booking.html" class="header-book-btn btn-cta px-6 py-3 text-base whitespace-nowrap">
+        Book Now<span class="btn-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </nav>
   </header>
@@ -60,58 +70,90 @@ ID number: 5114580 -->
 
       <!-- Gallery Grid -->
       <section class="mb-16 scroll-animate">
-        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Our Work Gallery</h2>
+        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">Our Work Gallery</h2>
         <p class="text-center mb-8">See the amazing transformations and happy pets we've groomed!</p>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 my-8">
+        <div class="gallery-grid my-8">
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-1"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/doggroomed1.avif" alt="Dog grooming before and after" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item gi-tall scroll-animate scroll-animate-delay-1">
+            <img src="./assets/images/doggroomed1.avif" alt="Dog grooming before and after" loading="lazy">
+            <span class="gallery-badge">Before &amp; After</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Full Grooming</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-2"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/catgroomed1.avif" alt="Groomed cat" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item scroll-animate scroll-animate-delay-2">
+            <img src="./assets/images/catgroomed1.avif" alt="Groomed cat" loading="lazy">
+            <span class="gallery-badge">Cat Grooming</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Bath &amp; Brush</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-3"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/doggroomed2.avif" alt="Groomed poodle" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item scroll-animate scroll-animate-delay-3">
+            <img src="./assets/images/doggroomed2.avif" alt="Groomed poodle" loading="lazy">
+            <span class="gallery-badge">Breed Standard</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Haircut</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-1"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/doggroomed3.avif" alt="Puppy bath" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item gi-wide scroll-animate scroll-animate-delay-1">
+            <img src="./assets/images/doggroomed3.avif" alt="Puppy bath" loading="lazy">
+            <span class="gallery-badge">Puppy Spa</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Puppy Package</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-2"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/catgroomed2.avif" alt="Cat after grooming" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item gi-tall scroll-animate scroll-animate-delay-2">
+            <img src="./assets/images/catgroomed2.avif" alt="Cat after grooming" loading="lazy">
+            <span class="gallery-badge">Spa Package</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Spa Package</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-3"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/doggroomed4.avif" alt="Dog after grooming" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item scroll-animate scroll-animate-delay-3">
+            <img src="./assets/images/doggroomed4.avif" alt="Dog after grooming" loading="lazy">
+            <span class="gallery-badge">Full Grooming</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Full Grooming</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-1"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/doggroomed5.jpg" alt="Dog grooming session" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item scroll-animate scroll-animate-delay-1">
+            <img src="./assets/images/doggroomed5.jpg" alt="Dog grooming session" loading="lazy">
+            <span class="gallery-badge">Senior Care</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Senior Package</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
-          <div class="gallery-item aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 scroll-animate scroll-animate-delay-2"
-               style="background: linear-gradient(135deg, #FFDBB6 0%, #F7A5A5 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <img src="./assets/images/doggroomed6.jpg" alt="Freshly groomed dog" class="w-full h-full object-cover block">
-          </div>
+          <figure class="gallery-item gi-wide scroll-animate scroll-animate-delay-2">
+            <img src="./assets/images/doggroomed6.jpg" alt="Freshly groomed dog" loading="lazy">
+            <span class="gallery-badge">Fresh Cut</span>
+            <div class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-tag">✦ Haircut</span>
+              <span class="gallery-hint">Click to view</span>
+            </div>
+          </figure>
 
         </div>
-        <p class="text-center text-sm opacity-70 mt-2">Click any photo to enlarge</p>
+        <p class="text-center text-sm opacity-70 mt-2">Click any photo to enlarge — use ← → keys to browse</p>
       </section>
 
       <!-- Our Facility -->
       <section class="mb-16 scroll-animate">
-        <h2 class="text-center font-semibold mb-6 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Our Facility</h2>
+        <h2 class="text-center font-semibold mb-6 text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">Our Facility</h2>
         <p class="text-center max-w-[700px] mx-auto">
           We maintain a clean, safe, and welcoming environment for all our furry clients. Our state-of-the-art equipment and spacious grooming stations ensure your pet's comfort throughout their visit.
         </p>
@@ -122,17 +164,18 @@ ID number: 5114580 -->
 
   <!-- FOOTER -->
   <footer class="text-white text-center px-8 py-12 mt-20"
-          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 -4px 12px rgba(0,0,0,0.15);">
+          style="background: linear-gradient(135deg, #0F1B2E 0%, #2D3E5F 100%); border-top: 3px solid #C9A876;">
     <nav class="footer-links flex justify-center gap-8 sm:gap-10 mb-6 flex-wrap" aria-label="Footer navigation">
-      <a href="./index.html"    class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Home</a>
-      <a href="./services.html" class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Services</a>
-      <a href="./gallery.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Gallery</a>
-      <a href="./booking.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Booking</a>
-      <a href="./contact.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Contact</a>
+      <a href="./index.html"    class="text-white no-underline font-medium py-2">Home</a>
+      <a href="./services.html" class="text-white no-underline font-medium py-2">Services</a>
+      <a href="./gallery.html"  class="text-white no-underline font-medium py-2">Gallery</a>
+      <a href="./booking.html"  class="text-white no-underline font-medium py-2">Booking</a>
+      <a href="./contact.html"  class="text-white no-underline font-medium py-2">Contact</a>
     </nav>
     <p class="opacity-90 text-[0.95rem] my-2">&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
     <p class="opacity-90 text-[0.95rem] my-2">Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
     <p class="opacity-90 text-[0.95rem] my-2">Opening Hours: Monday – Saturday 9:00 AM – 5:00 PM | Sunday: Closed</p>
+    <p class="footer-trust text-[0.85rem] mt-5">Certified groomers · Gentle handling · Caring for Hamilton's pets since 2015</p>
   </footer>
 
   <script src="./script.js"></script>

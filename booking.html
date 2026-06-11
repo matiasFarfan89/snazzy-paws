@@ -13,16 +13,28 @@ ID number: 5114580 -->
       theme: {
         extend: {
           colors: {
-            'brand-navy':  '#1A2A4F',
-            'brand-dark':  '#2a3a5f',
-            'brand-pink':  '#F7A5A5',
-            'brand-peach': '#FFDBB6',
-            'brand-cream': '#FFF2EF',
+            'brand-navy':     '#0F1B2E',
+            'brand-dark':     '#2D3E5F',
+            'brand-pink':     '#E89B9B',
+            'brand-rose':     '#D4878F',
+            'brand-peach':    '#F4D5C4',
+            'brand-cream':    '#FAF6F3',
+            'brand-gold':     '#C9A876',
+            'brand-sage':     '#A8B8A8',
+            'brand-charcoal': '#2C2C2C',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+            accent:  ['Lora', 'serif'],
           }
         }
       }
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -30,10 +42,9 @@ ID number: 5114580 -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-[1000] text-white"
-          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <header class="site-header sticky top-0 z-[1000] text-white">
     <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 py-4 relative">
-      <a href="index.html" class="text-2xl font-bold text-white no-underline hover:opacity-90 transition-opacity duration-300">
+      <a href="index.html" class="logo-link text-[1.6rem] font-bold text-white no-underline">
         🐾 Snazzy Paws Grooming
       </a>
       <button class="hamburger hidden flex-col cursor-pointer gap-[5px] bg-transparent border-0 p-1"
@@ -43,14 +54,13 @@ ID number: 5114580 -->
         <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
       </button>
       <ul class="nav-links flex list-none gap-10" id="navLinks">
-        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Services</a></li>
-        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Gallery</a></li>
-        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Booking</a></li>
-        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Contact</a></li>
+        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] py-2">Services</a></li>
+        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Gallery</a></li>
+        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Booking</a></li>
+        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Contact</a></li>
       </ul>
-      <a href="booking.html" class="header-book-btn inline-block bg-brand-pink text-brand-navy px-6 py-3 rounded-full font-bold text-base no-underline whitespace-nowrap border-2 border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:border-brand-pink"
-         style="box-shadow: 0 3px 10px rgba(247,165,165,0.4);">
-        Book Now
+      <a href="booking.html" class="header-book-btn btn-cta px-6 py-3 text-base whitespace-nowrap">
+        Book Now<span class="btn-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </nav>
   </header>
@@ -60,47 +70,46 @@ ID number: 5114580 -->
 
       <!-- Booking Form -->
       <section class="mb-16 scroll-animate">
-        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Book an Appointment</h2>
+        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">Book an Appointment</h2>
         <p class="text-center max-w-[700px] mx-auto mb-8">
           Fill out the form below to schedule your pet's grooming appointment. We'll contact you to confirm your booking.
         </p>
 
         <form id="booking-form" novalidate
-              class="max-w-[700px] mx-auto bg-white p-6 sm:p-10 rounded-2xl"
-              style="box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+              class="form-card max-w-[760px] mx-auto p-6 sm:p-12">
 
           <div class="mb-7">
-            <label for="owner-name" class="block mb-2 font-semibold text-[#2d3748] text-base">Owner's Name <span class="text-red-500">*</span></label>
+            <label for="owner-name" class="block mb-2 font-semibold text-brand-charcoal text-base">Owner's Name <span class="text-[#E57373]">*</span></label>
             <input type="text" id="owner-name" name="owner-name" required autocomplete="name">
           </div>
 
           <div class="mb-7">
-            <label for="email" class="block mb-2 font-semibold text-[#2d3748] text-base">Email Address <span class="text-red-500">*</span></label>
+            <label for="email" class="block mb-2 font-semibold text-brand-charcoal text-base">Email Address <span class="text-[#E57373]">*</span></label>
             <input type="email" id="email" name="email" required autocomplete="email">
           </div>
 
           <div class="mb-7">
-            <label for="phone" class="block mb-2 font-semibold text-[#2d3748] text-base">Phone Number <span class="text-red-500">*</span></label>
+            <label for="phone" class="block mb-2 font-semibold text-brand-charcoal text-base">Phone Number <span class="text-[#E57373]">*</span></label>
             <input type="tel" id="phone" name="phone" required autocomplete="tel">
           </div>
 
           <div class="mb-7">
-            <label for="dog-name" class="block mb-2 font-semibold text-[#2d3748] text-base">Dog's Name <span class="text-red-500">*</span></label>
+            <label for="dog-name" class="block mb-2 font-semibold text-brand-charcoal text-base">Dog's Name <span class="text-[#E57373]">*</span></label>
             <input type="text" id="dog-name" name="dog-name" required>
           </div>
 
           <div class="mb-7">
-            <label for="breed" class="block mb-2 font-semibold text-[#2d3748] text-base">Breed <span class="text-red-500">*</span></label>
+            <label for="breed" class="block mb-2 font-semibold text-brand-charcoal text-base">Breed <span class="text-[#E57373]">*</span></label>
             <input type="text" id="breed" name="breed" placeholder="e.g., Golden Retriever, Mixed Breed" required>
           </div>
 
           <div class="mb-7">
-            <label for="age" class="block mb-2 font-semibold text-[#2d3748] text-base">Dog's Age <span class="text-red-500">*</span></label>
+            <label for="age" class="block mb-2 font-semibold text-brand-charcoal text-base">Dog's Age <span class="text-[#E57373]">*</span></label>
             <input type="text" id="age" name="age" placeholder="e.g., 5 years" required>
           </div>
 
           <div class="mb-7">
-            <label for="service" class="block mb-2 font-semibold text-[#2d3748] text-base">Preferred Service <span class="text-red-500">*</span></label>
+            <label for="service" class="block mb-2 font-semibold text-brand-charcoal text-base">Preferred Service <span class="text-[#E57373]">*</span></label>
             <select id="service" name="service" required>
               <option value="">Select a service…</option>
               <option value="bath-brush">Bath and Brush</option>
@@ -114,21 +123,20 @@ ID number: 5114580 -->
           </div>
 
           <div class="mb-7">
-            <label for="preferred-date" class="block mb-2 font-semibold text-[#2d3748] text-base">Preferred Date</label>
+            <label for="preferred-date" class="block mb-2 font-semibold text-brand-charcoal text-base">Preferred Date</label>
             <input type="date" id="preferred-date" name="preferred-date">
           </div>
 
           <div class="mb-7">
-            <label for="special-requirements" class="block mb-2 font-semibold text-[#2d3748] text-base">Special Requirements or Notes</label>
+            <label for="special-requirements" class="block mb-2 font-semibold text-brand-charcoal text-base">Special Requirements or Notes</label>
             <textarea id="special-requirements" name="special-requirements"
                       placeholder="Please let us know about any special needs, medical conditions, behavioral concerns, or specific requests…"></textarea>
           </div>
 
-          <div class="mb-4">
+          <div class="mb-4 flex justify-center">
             <button type="submit"
-                    class="w-full max-w-[300px] block mx-auto text-brand-navy font-bold text-[1.1rem] py-[1.1rem] px-12 rounded-full border-0 cursor-pointer transition-all duration-300 hover:-translate-y-1 active:-translate-y-0.5"
-                    style="background: linear-gradient(135deg, #F7A5A5 0%, #f28e8e 100%); box-shadow: 0 4px 15px rgba(247,165,165,0.4);">
-              Submit Booking Request
+                    class="btn-cta w-full max-w-[320px] text-[1.1rem] py-[1.1rem] px-12">
+              Submit Booking Request<span class="btn-arrow" aria-hidden="true">&rarr;</span>
             </button>
           </div>
 
@@ -140,16 +148,16 @@ ID number: 5114580 -->
 
       <!-- Booking Info -->
       <section class="mb-16 scroll-animate">
-        <h2 class="text-center font-semibold mb-8 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Booking Information</h2>
+        <h2 class="text-center font-semibold mb-8 text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">Booking Information</h2>
 
-        <div class="bg-brand-cream p-8 rounded-xl border-l-[5px] border-l-brand-pink mb-6 scroll-animate scroll-animate-delay-1"
-             style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div class="bg-brand-peach/50 p-8 rounded-xl border-l-4 border-l-brand-rose mb-6 scroll-animate scroll-animate-delay-1"
+             style="box-shadow: 0 2px 10px rgba(15,27,46,0.06);">
           <h3 class="font-semibold text-[1.3rem] mb-4">📋 Cancellation Policy</h3>
           <p>Please provide at least 24 hours notice for cancellations or rescheduling.</p>
         </div>
 
-        <div class="bg-brand-cream p-8 rounded-xl border-l-[5px] border-l-brand-pink mb-6 scroll-animate scroll-animate-delay-2"
-             style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div class="bg-brand-peach/50 p-8 rounded-xl border-l-4 border-l-brand-rose mb-6 scroll-animate scroll-animate-delay-2"
+             style="box-shadow: 0 2px 10px rgba(15,27,46,0.06);">
           <h3 class="font-semibold text-[1.3rem] mb-4">🐕 Preparation Tips</h3>
           <p>Please ensure your dog has been exercised before the appointment and inform us of any anxiety or behavioral concerns.</p>
         </div>
@@ -160,17 +168,18 @@ ID number: 5114580 -->
 
   <!-- FOOTER -->
   <footer class="text-white text-center px-8 py-12 mt-20"
-          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 -4px 12px rgba(0,0,0,0.15);">
+          style="background: linear-gradient(135deg, #0F1B2E 0%, #2D3E5F 100%); border-top: 3px solid #C9A876;">
     <nav class="footer-links flex justify-center gap-8 sm:gap-10 mb-6 flex-wrap" aria-label="Footer navigation">
-      <a href="./index.html"    class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Home</a>
-      <a href="./services.html" class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Services</a>
-      <a href="./gallery.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Gallery</a>
-      <a href="./booking.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Booking</a>
-      <a href="./contact.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Contact</a>
+      <a href="./index.html"    class="text-white no-underline font-medium py-2">Home</a>
+      <a href="./services.html" class="text-white no-underline font-medium py-2">Services</a>
+      <a href="./gallery.html"  class="text-white no-underline font-medium py-2">Gallery</a>
+      <a href="./booking.html"  class="text-white no-underline font-medium py-2">Booking</a>
+      <a href="./contact.html"  class="text-white no-underline font-medium py-2">Contact</a>
     </nav>
     <p class="opacity-90 text-[0.95rem] my-2">&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
     <p class="opacity-90 text-[0.95rem] my-2">Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
     <p class="opacity-90 text-[0.95rem] my-2">Opening Hours: Monday – Saturday 9:00 AM – 5:00 PM | Sunday: Closed</p>
+    <p class="footer-trust text-[0.85rem] mt-5">Certified groomers · Gentle handling · Caring for Hamilton's pets since 2015</p>
   </footer>
 
   <script src="./script.js"></script>

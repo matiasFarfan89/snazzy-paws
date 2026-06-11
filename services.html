@@ -13,16 +13,28 @@ ID number: 5114580 -->
       theme: {
         extend: {
           colors: {
-            'brand-navy':  '#1A2A4F',
-            'brand-dark':  '#2a3a5f',
-            'brand-pink':  '#F7A5A5',
-            'brand-peach': '#FFDBB6',
-            'brand-cream': '#FFF2EF',
+            'brand-navy':     '#0F1B2E',
+            'brand-dark':     '#2D3E5F',
+            'brand-pink':     '#E89B9B',
+            'brand-rose':     '#D4878F',
+            'brand-peach':    '#F4D5C4',
+            'brand-cream':    '#FAF6F3',
+            'brand-gold':     '#C9A876',
+            'brand-sage':     '#A8B8A8',
+            'brand-charcoal': '#2C2C2C',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+            accent:  ['Lora', 'serif'],
           }
         }
       }
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -30,10 +42,9 @@ ID number: 5114580 -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-[1000] text-white"
-          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <header class="site-header sticky top-0 z-[1000] text-white">
     <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 py-4 relative">
-      <a href="index.html" class="text-2xl font-bold text-white no-underline hover:opacity-90 transition-opacity duration-300">
+      <a href="index.html" class="logo-link text-[1.6rem] font-bold text-white no-underline">
         🐾 Snazzy Paws Grooming
       </a>
       <button class="hamburger hidden flex-col cursor-pointer gap-[5px] bg-transparent border-0 p-1"
@@ -43,14 +54,13 @@ ID number: 5114580 -->
         <span class="block w-7 h-[3px] bg-white rounded transition-all duration-300"></span>
       </button>
       <ul class="nav-links flex list-none gap-10" id="navLinks">
-        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Services</a></li>
-        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Gallery</a></li>
-        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Booking</a></li>
-        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] transition-all duration-300 py-2 hover:opacity-85">Contact</a></li>
+        <li><a href="services.html" class="text-white no-underline font-medium text-[1.05rem] py-2">Services</a></li>
+        <li><a href="gallery.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Gallery</a></li>
+        <li><a href="booking.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Booking</a></li>
+        <li><a href="contact.html"  class="text-white no-underline font-medium text-[1.05rem] py-2">Contact</a></li>
       </ul>
-      <a href="booking.html" class="header-book-btn inline-block bg-brand-pink text-brand-navy px-6 py-3 rounded-full font-bold text-base no-underline whitespace-nowrap border-2 border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:border-brand-pink"
-         style="box-shadow: 0 3px 10px rgba(247,165,165,0.4);">
-        Book Now
+      <a href="booking.html" class="header-book-btn btn-cta px-6 py-3 text-base whitespace-nowrap">
+        Book Now<span class="btn-arrow" aria-hidden="true">&rarr;</span>
       </a>
     </nav>
   </header>
@@ -60,78 +70,78 @@ ID number: 5114580 -->
 
       <!-- Services Table -->
       <section class="mb-16 scroll-animate">
-        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Our Grooming Services</h2>
+        <h2 class="text-center font-semibold mb-4 text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">Our Grooming Services</h2>
         <p class="text-center mb-8">We offer a comprehensive range of professional grooming services tailored to your dog's needs.</p>
 
-        <div class="overflow-x-auto rounded-xl scroll-animate" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-          <table class="w-full border-collapse" style="border-radius: 10px; overflow: hidden;">
+        <div class="overflow-x-auto rounded-xl scroll-animate" style="box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+          <table class="services-table w-full border-collapse" style="border-radius: 12px; overflow: hidden;">
             <thead>
-              <tr style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%);">
+              <tr style="background: linear-gradient(135deg, #0F1B2E 0%, #2D3E5F 100%);">
                 <th class="text-left px-5 py-5 text-white font-semibold text-[1.05rem]">Service</th>
                 <th class="text-left px-5 py-5 text-white font-semibold text-[1.05rem]">Description</th>
                 <th class="text-left px-5 py-5 text-white font-semibold text-[1.05rem] whitespace-nowrap">Price</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Bath and Brush</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Shampoo, blow-dry, brush-out and nail trim</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$25 – $50</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🛁</span>Bath and Brush</td>
+                <td class="px-5 py-5 text-brand-charcoal">Shampoo, blow-dry, brush-out and nail trim</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$25 – $50</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Haircut</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Bath, blow-dry, haircut (breed standard or owner's preference) and nail trim</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$45 – $85</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">✂️</span>Haircut</td>
+                <td class="px-5 py-5 text-brand-charcoal">Bath, blow-dry, haircut (breed standard or owner's preference) and nail trim</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$45 – $85</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Full Grooming Package</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Comprehensive service including bath, haircut, teeth brushing, nail trim and ear cleaning</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$60 – $120</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">✨</span>Full Grooming Package</td>
+                <td class="px-5 py-5 text-brand-charcoal">Comprehensive service including bath, haircut, teeth brushing, nail trim and ear cleaning</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$60 – $120</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Spa Package</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Bath, haircut, teeth brushing, nail trim and special scents or conditioners</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$75 – $150</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🌸</span>Spa Package</td>
+                <td class="px-5 py-5 text-brand-charcoal">Bath, haircut, teeth brushing, nail trim and special scents or conditioners</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$75 – $150</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Senior Dog Package</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Grooming services tailored for older dogs with special handling and care</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$40 – $80</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">💛</span>Senior Dog Package</td>
+                <td class="px-5 py-5 text-brand-charcoal">Grooming services tailored for older dogs with special handling and care</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$40 – $80</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Puppy Package</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Introductory grooming services tailored for puppies</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$30 – $60</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🐶</span>Puppy Package</td>
+                <td class="px-5 py-5 text-brand-charcoal">Introductory grooming services tailored for puppies</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$30 – $60</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Nail Trim</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Trim nails and filing</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$10 – $20</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">💅</span>Nail Trim</td>
+                <td class="px-5 py-5 text-brand-charcoal">Trim nails and filing</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$10 – $20</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Ear Cleaning</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Gentle cleaning of ears to remove wax and debris</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$10 – $15</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">👂</span>Ear Cleaning</td>
+                <td class="px-5 py-5 text-brand-charcoal">Gentle cleaning of ears to remove wax and debris</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$10 – $15</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Teeth Brushing</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Brushing with pet-safe toothpaste</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$10 – $15</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🦷</span>Teeth Brushing</td>
+                <td class="px-5 py-5 text-brand-charcoal">Brushing with pet-safe toothpaste</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$10 – $15</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>De-shedding Treatment</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Special shampoo and undercoat removal (in addition to bath or haircut)</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">+$20 – $40</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🧹</span>De-shedding Treatment</td>
+                <td class="px-5 py-5 text-brand-charcoal">Special shampoo and undercoat removal (in addition to bath or haircut)</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">+$20 – $40</td>
               </tr>
-              <tr class="border-b border-brand-peach bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Medicated Bath</strong></td>
-                <td class="px-5 py-5 text-brand-navy">For pets with skin conditions requiring special shampoo (additional charge)</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">+$20 – $40</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🧴</span>Medicated Bath</td>
+                <td class="px-5 py-5 text-brand-charcoal">For pets with skin conditions requiring special shampoo (additional charge)</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">+$20 – $40</td>
               </tr>
-              <tr class="bg-white hover:bg-brand-cream transition-colors duration-200">
-                <td class="px-5 py-5 text-brand-navy"><strong>Flea and Tick Treatment</strong></td>
-                <td class="px-5 py-5 text-brand-navy">Shampoo and preventative treatment</td>
-                <td class="px-5 py-5 font-bold text-brand-pink whitespace-nowrap text-[1.05rem]">$15 – $30</td>
+              <tr>
+                <td class="px-5 py-5 text-brand-charcoal font-semibold whitespace-nowrap"><span class="service-icon" aria-hidden="true">🛡️</span>Flea and Tick Treatment</td>
+                <td class="px-5 py-5 text-brand-charcoal">Shampoo and preventative treatment</td>
+                <td class="px-5 py-5 font-bold text-brand-rose whitespace-nowrap text-[1.05rem]">$15 – $30</td>
               </tr>
             </tbody>
           </table>
@@ -140,31 +150,34 @@ ID number: 5114580 -->
 
       <!-- Expert Team -->
       <section class="mb-16 scroll-animate">
-        <h2 class="text-center font-semibold mb-12 text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem]">Our Expert Team</h2>
+        <h2 class="text-center font-semibold mb-12 text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">Our Expert Team</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 justify-items-center">
 
-          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
-                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+          <article class="bg-white p-8 sm:p-10 rounded-2xl border border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-rose hover:shadow-xl
                           scroll-animate scroll-animate-delay-1"
-                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            <h3 class="text-[1.5rem] font-semibold mb-4">Certified Groomers</h3>
-            <p class="text-[1rem] leading-[1.7]">Our team consists of professionally trained and certified dog groomers with extensive experience in all breeds.</p>
+                   style="box-shadow: 0 2px 10px rgba(15,27,46,0.06);">
+            <span class="text-[2rem] mb-4 block text-brand-gold" aria-hidden="true">🎓</span>
+            <h3 class="text-[1.4rem] font-semibold mb-4">Certified Groomers</h3>
+            <p class="text-[1rem] leading-[1.8]">Our team consists of professionally trained and certified dog groomers with extensive experience in all breeds.</p>
           </article>
 
-          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
-                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+          <article class="bg-white p-8 sm:p-10 rounded-2xl border border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-rose hover:shadow-xl
                           scroll-animate scroll-animate-delay-2"
-                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            <h3 class="text-[1.5rem] font-semibold mb-4">Specialized Training</h3>
-            <p class="text-[1rem] leading-[1.7]">Staff trained in senior dog care, medical grooming requirements, and breed-specific styling techniques.</p>
+                   style="box-shadow: 0 2px 10px rgba(15,27,46,0.06);">
+            <span class="text-[2rem] mb-4 block text-brand-gold" aria-hidden="true">🏅</span>
+            <h3 class="text-[1.4rem] font-semibold mb-4">Specialized Training</h3>
+            <p class="text-[1rem] leading-[1.8]">Staff trained in senior dog care, medical grooming requirements, and breed-specific styling techniques.</p>
           </article>
 
-          <article class="bg-brand-cream p-8 sm:p-10 rounded-2xl border-2 border-brand-peach text-center w-full max-w-[400px]
-                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-pink
+          <article class="bg-white p-8 sm:p-10 rounded-2xl border border-brand-peach text-center w-full max-w-[400px]
+                          transition-all duration-300 hover:-translate-y-2 hover:border-brand-rose hover:shadow-xl
                           scroll-animate scroll-animate-delay-3"
-                   style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            <h3 class="text-[1.5rem] font-semibold mb-4">Passionate Care</h3>
-            <p class="text-[1rem] leading-[1.7]">We're dog lovers first, ensuring every pet receives gentle, patient, and loving treatment.</p>
+                   style="box-shadow: 0 2px 10px rgba(15,27,46,0.06);">
+            <span class="text-[2rem] mb-4 block text-brand-gold" aria-hidden="true">💖</span>
+            <h3 class="text-[1.4rem] font-semibold mb-4">Passionate Care</h3>
+            <p class="text-[1rem] leading-[1.8]">We're dog lovers first, ensuring every pet receives gentle, patient, and loving treatment.</p>
           </article>
 
         </div>
@@ -175,17 +188,18 @@ ID number: 5114580 -->
 
   <!-- FOOTER -->
   <footer class="text-white text-center px-8 py-12 mt-20"
-          style="background: linear-gradient(135deg, #1A2A4F 0%, #2a3a5f 100%); box-shadow: 0 -4px 12px rgba(0,0,0,0.15);">
+          style="background: linear-gradient(135deg, #0F1B2E 0%, #2D3E5F 100%); border-top: 3px solid #C9A876;">
     <nav class="footer-links flex justify-center gap-8 sm:gap-10 mb-6 flex-wrap" aria-label="Footer navigation">
-      <a href="./index.html"    class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Home</a>
-      <a href="./services.html" class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Services</a>
-      <a href="./gallery.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Gallery</a>
-      <a href="./booking.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Booking</a>
-      <a href="./contact.html"  class="text-white no-underline font-medium py-2 hover:opacity-85 transition-opacity">Contact</a>
+      <a href="./index.html"    class="text-white no-underline font-medium py-2">Home</a>
+      <a href="./services.html" class="text-white no-underline font-medium py-2">Services</a>
+      <a href="./gallery.html"  class="text-white no-underline font-medium py-2">Gallery</a>
+      <a href="./booking.html"  class="text-white no-underline font-medium py-2">Booking</a>
+      <a href="./contact.html"  class="text-white no-underline font-medium py-2">Contact</a>
     </nav>
     <p class="opacity-90 text-[0.95rem] my-2">&copy; 2025 Snazzy Paws Grooming. All rights reserved.</p>
     <p class="opacity-90 text-[0.95rem] my-2">Hamilton, New Zealand | Phone: (07) 123-4567 | Email: info@snazzypaws.co.nz</p>
     <p class="opacity-90 text-[0.95rem] my-2">Opening Hours: Monday – Saturday 9:00 AM – 5:00 PM | Sunday: Closed</p>
+    <p class="footer-trust text-[0.85rem] mt-5">Certified groomers · Gentle handling · Caring for Hamilton's pets since 2015</p>
   </footer>
 
   <script src="./script.js"></script>
